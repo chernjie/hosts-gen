@@ -5,12 +5,9 @@ etcdir="/etc/hosts.d"
 hostsfile="/etc/hosts"
 
 hostfiles="$(ls -1 "${etcdir}" | grep '^[0-9]*-.*')"
-
-[ -e "$hostsfile" ] && cp "$hostsfile" "$hostsfile.bkp"
-
 truncate -s 0 "${hostsfile}"
-for f in $hostfiles;
-do
+
+for f in $hostfiles; do
 	cat "${etcdir}/${f}" >> "${hostsfile}"
 done
 
