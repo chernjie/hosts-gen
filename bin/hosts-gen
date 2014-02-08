@@ -1,6 +1,8 @@
 #!/bin/sh
 # See the LICENSE file for copyright and license details.
 
+set -e
+
 etcdir="/etc/hosts.d"
 hostsfile="/etc/hosts"
 
