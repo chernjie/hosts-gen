@@ -8,7 +8,7 @@ all:
 dist:
 	@echo creating dist tarball
 	@mkdir -p hosts-gen-${VERSION}
-	@cp -R LICENSE Makefile README config.mk etc examples bin hosts-gen-${VERSION}
+	@cp -R LICENSE Makefile hosts-gen.1 config.mk etc examples bin hosts-gen-${VERSION}
 	@tar -cf hosts-gen-${VERSION}.tar hosts-gen-${VERSION}
 	@gzip hosts-gen-${VERSION}.tar
 	@rm -rf hosts-gen-${VERSION}
