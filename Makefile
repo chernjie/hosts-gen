@@ -21,14 +21,16 @@ install: all
 	@echo installing ${DESTDIR}${PREFIX}/etc/hosts.d
 	@mkdir -p ${DESTDIR}${PREFIX}/etc/hosts.d
 	@cp -R etc/hosts.d/* ${DESTDIR}${PREFIX}/etc/hosts.d
-#	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
-#	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
-#	@sed "s/VERSION/${VERSION}/g" < st.1 > ${DESTDIR}${MANPREFIX}/man1/st.1
-#	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/st.1
+	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+	@sed "s/VERSION/${VERSION}/g" < hosts-gen.1 > ${DESTDIR}${MANPREFIX}/man1/hosts-gen.1
+	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/hosts-gen.1
 
 uninstall:
 	@echo removing script from ${DESTDIR}${PREFIX}/bin
 	@rm -f ${DESTDIR}${PREFIX}/bin/hosts-gen
+	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+	@rm -f ${DESTDIR}${MANPREFIX}/man1/hosts-gen.1
 	@echo you need to manually remove the ${DESTDIR}${PREFIX}/etc/hosts.d directory
 
 .PHONY: all dist install uninstall

@@ -1,0 +1,23 @@
+.TH hosts-gen 1 "2014-02-12" "hosts-gen VERSION" "hosts-gen Manual"
+
+.SH NAME
+hosts-gen \- generate /etc/hosts from /etc/hosts.d
+
+.SH SYNOPSIS
+.B hosts-gen
+
+.SH DESCRIPTION
+This  is a simple framework to create your hosts file from many files in
+a hosts.d folder. It is usefull especially when you  have  a  frequently
+updated  part  of  the  hosts  file,  like a filter list for spam and it
+should be integrated into the main hosts file without any manual
+intervention.
+
+The  hosts  parts are by default stored in /etc/hosts.d and will be read
+according to their standard sort order in ls(1). The file names have the
+form  of ’^[0‐9]*‐[^ ]’ (see the etc/hosts.d dir for the standard header
+and the localhost). Files can be easily excluded from being run  by
+removing the numbers in front of their name.
+
+.SH SEE ALSO
+.BR hosts (5)
